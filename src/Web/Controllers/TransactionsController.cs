@@ -53,12 +53,15 @@ namespace Web.Controllers
         }
 
         [HttpPost]
-        [ProducesResponseType(StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status201Created)]
         public async Task<ActionResult<IList<Transaction>>> Create(TransactionBody transactionBody)
         {
             var transaction = await _transactionService.CreateTransactionAsync(transactionBody);
 
-            return Created($"/api/transactions/{transaction.Id}", _mapper.Map<TransactionDto>(transaction));
+            return CreatedAtAction(
+                nameof(GetById), new { id = transaction.Id },
+                _mapper.Map<TransactionDto>(transaction)
+            );
         }
     }
 }
