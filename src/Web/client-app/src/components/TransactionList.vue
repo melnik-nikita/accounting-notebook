@@ -19,7 +19,7 @@ export default {
   methods: {
     async fetchTransactions() {
       const response = await this.$http.get(
-        "http://localhost:5000/api/transactions"
+        "/api/transactions"
       );
 
       var data = await response.json();

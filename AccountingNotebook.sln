@@ -6,6 +6,7 @@ ProjectSection(SolutionItems) = preProject
 	.gitattributes = .gitattributes
 	.gitignore = .gitignore
 	global.json = global.json
+	README.md = README.md
 EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{32A0C7F5-F809-4145-9E4D-349668B9E1B2}"
